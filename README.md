@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI Translation App
 
-## Getting Started
+## Description
 
-First, run the development server:
+A Next.js translation application that uses AI models (OpenAI GPT-4o-mini and Anthropic Claude Opus 4.5) to translate both text and JSON data between languages. The app features a clean UI with support for multiple languages, JSON file uploads, and preserves JSON structure while translating only string values.
 
+Built with Next.js 16 (App Router), TypeScript, and TailwindCSS.
+
+## Assumptions 
+
+This code translates *all* string JSON values to the target language. 
+
+Also if the source language was chosen incorrectly, the user would still like to translate the text/JSON values to the output language. If the source language and output language were the same, the text/JSON should remain the same.
+
+## How to Run Locally
+
+1. **Clone the repository**
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone <repository-url>
+cd translation-app
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Install dependencies**
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. **Set up environment variables**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Create a `.env.local` file in the root directory:
+```
+PROXY_TOKEN=your-proxy-token
+OPENAI_BASE_URL=https://hiring-proxy.gtx.dev/openai
+ANTHROPIC_BASE_URL=https://hiring-proxy.gtx.dev/anthropic
+```
 
-## Learn More
+4. **Run the development server**
+```bash
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+5. **Open the app**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Navigate to [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## Challenges
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+One major challenge I faced was getting the LM to translate *all* JSON string values to the other language, even some that a user might traditionally not want to translate, such as filenames and URLS. 
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Improvements
+
+With more time, I would implement different useful features:
+- an ability to choose not to translate certain JSON string values such as type names, file paths, urls, etc.
+- more models and providers
+- a token counter or approximator so the user does not go over the max tokens / context length
+- the ability to translate other useful filetypes
+- a cleaner UI
