@@ -345,6 +345,7 @@ export default function TranslationForm() {
             <pre className="text-sm overflow-x-auto whitespace-pre-wrap">
             {(() => {
                 try {
+                // Simply turns the translated text into a JSON string with double space indentation
                 return JSON.stringify(JSON.parse(translatedText), null, 2);
                 } catch (e) {
                 return translatedText;
