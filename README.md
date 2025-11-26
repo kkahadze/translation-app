@@ -10,7 +10,7 @@ Built with Next.js 16 (App Router), TypeScript, and TailwindCSS.
 
 This code translates *all* string JSON values to the target language. 
 
-Also if the source language was chosen incorrectly, the user would still like to translate the text/JSON values to the output language. If the source language and output language were the same, the text/JSON should remain the same.
+Also if the source language was chosen incorrectly, the text/JSON values will still be translated to the output language. If the source language and output language are the same, the text/JSON will remain the same.
 
 ## How to Run Locally
 
