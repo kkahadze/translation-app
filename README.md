@@ -16,7 +16,7 @@ Also if the source language was chosen incorrectly, the user would still like to
 
 1. **Clone the repository**
 ```bash
-git clone <repository-url>
+git clone https://github.com/kkahadze/translation-app
 cd translation-app
 ```
 
