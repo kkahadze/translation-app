@@ -54,5 +54,6 @@ With more time, I would implement different useful features:
 - an ability to choose not to translate certain JSON string values such as type names, file paths, urls, etc.
 - more models and providers
 - a token counter or approximator so the user does not go over the max tokens / context length
+- the ability to put in an unlimited amount of input, with the site processing input in chunks
 - the ability to translate other useful filetypes
 - a cleaner UI
