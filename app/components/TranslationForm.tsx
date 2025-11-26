@@ -274,8 +274,8 @@ export default function TranslationForm() {
         value={text}
         onChange={(e) => setText(e.target.value)}
         placeholder={mode === 'text' 
-        ? 'Enter text to translate...' 
-        : 'Enter valid JSON to translate...'
+        ? 'Enter text to translate... (e.g., "Hello, how are you today?")' 
+        : 'Paste JSON here or upload a file above... (e.g., {"greeting": "Hello", "name": "World"})'
         }
         rows={6}
         className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none font-mono"
