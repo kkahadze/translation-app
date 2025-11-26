@@ -105,7 +105,7 @@ ${text}`;
       return NextResponse.json<ErrorResponse>(
         { 
           error: 'Translation too long',
-          details: 'Your JSON is too large to translate in one request. Try breaking it into smaller parts or use a smaller JSON.'
+          details: 'Your input is too large to translate in one request. Try using smaller text or breaking it into parts.'
         },
         { status: 413 }  // 413 = Payload Too Large
       );
